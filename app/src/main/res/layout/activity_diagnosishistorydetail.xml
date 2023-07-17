@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imageview_close"
+        android:layout_width="@dimen/margin_15"
+        android:layout_height="@dimen/margin_15"
+        android:layout_margin="@dimen/margin_20"
+        android:background="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
+
+    <!--<nl.dionsegijn.konfetti.KonfettiView
+        android:id="@+id/viewKonfetti"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:layout_marginEnd="@dimen/margin_5"
+        android:text="@string/text_history_title"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/header_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textview_share"
+        app:layout_constraintStart_toEndOf="@+id/imageview_close"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginEnd="@dimen/margin_15"
+        android:background="@drawable/divider_button_share_line_border"
+        android:paddingStart="@dimen/margin_10"
+        android:paddingTop="3dp"
+        android:paddingEnd="@dimen/margin_10"
+        android:paddingBottom="3dp"
+        android:text="@string/button_share"
+        android:textColor="@color/share_border"
+        android:textSize="@dimen/text_13"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_15"
+        android:background="@color/border"
+        app:layout_constraintTop_toBottomOf="@+id/textview_title">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageViewUserPhoto"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
+            android:layout_marginTop="@dimen/margin_30"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:src="@drawable/profile_img"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewUserImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:elevation="10dp"
+            android:visibility="gone"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_person" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/header_size"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewUserPhoto" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewUserAge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_15"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/header_size"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserName" />
+
+        <!--   <androidx.appcompat.widget.AppCompatTextView
+               android:id="@+id/textViewLocation"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/margin_5"
+               android:layout_marginBottom="@dimen/margin_10"
+               android:textColor="@color/text_color"
+               android:textSize="@dimen/header_size"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/textViewUserAge" />-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toTopOf="@+id/layout_percentage"
+        android:layout_marginBottom="@dimen/margin_20"
+        app:layout_constraintTop_toBottomOf="@+id/layoutProfile">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_detailview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_test_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20"
+                android:elevation="4dp"
+                app:cardCornerRadius="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerview_detailview">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_user_name">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textview_test_details_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/border"
+                        android:lineSpacingExtra="6.5sp"
+                        android:paddingStart="@dimen/margin_15"
+                        android:paddingTop="@dimen/margin_5"
+                        android:paddingBottom="@dimen/margin_5"
+                        android:text="@string/text_primary_diagnosis"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_13"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textview_test_description"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_15"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:lineSpacingExtra="5.5sp"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_11"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_test_details_label"
+                        tools:layout_editor_absoluteY="58dp"
+                        tools:text="Based on the information you provided, you may have COVID - 19." />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textview_testRecommended"
+                        android:layout_width="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_15"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:lineSpacingExtra="5sp"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_11"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_test_description"
+                        tools:text="Please book a test or consult with our speclists  " />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_testRecommended"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20"
+                android:elevation="4dp"
+                app:cardCornerRadius="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_test_details">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_user_name">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textview_test_recommended_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/border"
+                        android:lineSpacingExtra="6.5sp"
+                        android:paddingStart="@dimen/margin_15"
+                        android:paddingTop="@dimen/margin_5"
+                        android:paddingBottom="@dimen/margin_5"
+                        android:text="@string/text_Recommended"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_13"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewRecommendedTest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_test_recommended_label" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewUserCommants"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20"
+                android:elevation="4dp"
+                app:cardCornerRadius="@dimen/margin_5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_testRecommended">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_user_name">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewConcernsLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/border"
+                        android:lineSpacingExtra="6.5sp"
+                        android:paddingStart="@dimen/margin_15"
+                        android:paddingTop="@dimen/margin_5"
+                        android:paddingBottom="@dimen/margin_5"
+                        android:text="@string/text_concerns"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_13"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewConcerns"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:lineSpacingExtra="6.5sp"
+                        android:paddingStart="@dimen/margin_10"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_13"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewConcernsLabel" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_percentage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_20"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_diagnosis_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_15"
+            android:lineSpacingExtra="6.5sp"
+            android:paddingStart="@dimen/margin_10"
+            android:paddingTop="@dimen/margin_5"
+            android:paddingBottom="@dimen/margin_5"
+            android:text="@string/text_diagnosis_measure"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_13"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--<ProgressBar
+            android:id="@+id/customProgress"
+            style="@style/CustomProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_20"
+            app:layout_constraintTop_toBottomOf="@+id/textview_diagnosis_label" />
+-->
+        <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+            android:id="@+id/customProgress"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_15"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_20"
+            app:layout_constraintTop_toBottomOf="@+id/textview_diagnosis_label"
+            app:rcAnimationEnable="true"
+            app:rcAnimationSpeedScale="20"
+            app:rcBackgroundColor="@color/quick_health_progress_no_fill_bg"
+            app:rcProgressColor="@color/purple_500"
+            app:rcRadius="4dp"
+            app:rcReverse="false" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_percentage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:gravity="center"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_13"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customProgress"
+            tools:text="60%" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

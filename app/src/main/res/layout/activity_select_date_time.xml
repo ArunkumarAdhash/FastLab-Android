@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imageviewClose"
+        android:layout_width="@dimen/margin_15"
+        android:layout_height="@dimen/margin_15"
+        android:layout_margin="@dimen/margin_20"
+        android:background="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
+
+    <com.lifehopehealthapp.widgets.LifeHopenTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_15"
+        android:text="@string/text_select_date_time"
+        android:textColor="@color/black"
+        android:textSize="@dimen/header_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewTestDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:elevation="4dp"
+        app:cardCornerRadius="@dimen/margin_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageviewClose">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_user_name">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textviewTestDetailsLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/border"
+                android:padding="@dimen/margin_10"
+                android:text="@string/text_test_details"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_5"
+                android:layout_marginRight="@dimen/margin_5"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textviewTestDetailsLabel">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageviewPicture"
+                    android:layout_width="@dimen/margin_50"
+                    android:layout_height="@dimen/margin_50"
+                    android:layout_marginStart="@dimen/margin_15"
+                    android:layout_marginTop="@dimen/margin_25"
+                    app:srcCompat="@drawable/ic_covid_19" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textviewTestHeading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:textColor="@color/test_heading"
+                        android:textSize="@dimen/text_13"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textviewTestDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_20"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_11" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/margin_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonConfirmSchedule"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewTestDetails">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewSelectDateTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20"
+                android:elevation="4dp"
+                app:cardCornerRadius="@dimen/margin_5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/margin_20">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textviewSelectDateTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/border"
+                        android:padding="@dimen/margin_10"
+                        android:text="@string/text_select_date_time"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerviewDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_20"
+                        app:layout_constraintTop_toBottomOf="@+id/textviewSelectDateTime" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutMorning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/margin_40"
+                        android:layout_margin="@dimen/margin_20"
+                        android:background="@drawable/alert_bg"
+                        app:layout_constraintEnd_toStartOf="@+id/layoutEvening"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recyclerviewDate">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageviewMorning"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_10"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_morning" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textviewMorningLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_5"
+                            android:paddingRight="@dimen/margin_10"
+                            android:singleLine="true"
+                            android:text="@string/text_morning"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_11"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imageviewMorning"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutEvening"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/margin_40"
+                        android:layout_margin="@dimen/margin_20"
+                        android:background="@drawable/alert_bg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/layoutMorning"
+                        app:layout_constraintTop_toBottomOf="@+id/recyclerviewDate">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageviewEvening"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_10"
+                            android:layout_marginTop="3dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_evening" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textview_eveningLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_5"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="@dimen/margin_5"
+                            android:paddingRight="@dimen/margin_10"
+                            android:singleLine="true"
+                            android:text="@string/text_evening"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_11"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imageviewEvening"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- <GridView
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_margin="@dimen/margin_20"
+                         android:layout_marginBottom="@dimen/margin_20"
+                         android:numColumns="5"
+                         app:layout_constraintBottom_toBottomOf="parent"
+                         app:layout_constraintTop_toBottomOf="@+id/layout_eveng" />-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerviewTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_25"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:layout_marginRight="@dimen/margin_25"
+                        android:layout_marginBottom="@dimen/margin_20"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutEvening" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.lifehopehealthapp.widgets.LifeHopeButton
+        android:id="@+id/buttonConfirmSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_40"
+        android:layout_margin="@dimen/margin_20"
+        android:background="@drawable/button_theme_bg"
+        android:gravity="center"
+        android:text="@string/button_confirm_scheduling"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

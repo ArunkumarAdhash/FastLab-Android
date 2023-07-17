@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="@dimen/margin_5"
+    android:gravity="center_horizontal">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_option"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginBottom="@dimen/margin_5"
+        android:background="@drawable/symptom_answer_bg"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingLeft="@dimen/margin_40"
+        android:paddingTop="@dimen/margin_10"
+        android:paddingRight="@dimen/margin_40"
+        android:paddingBottom="@dimen/margin_10"
+        android:textColor="@color/purple_500"
+        android:textSize="15sp" />
+</LinearLayout>

@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml:1:1-44
+INJECTED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml:1:1-44
+INJECTED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml:1:1-44
+	package
+		ADDED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml:1:11-42
+		INJECTED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml:1:1-44
+uses-sdk
+INJECTED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml
+INJECTED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml
+INJECTED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml
+INJECTED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Work/LifeHope-Andriod-master/swipelayout/src/main/AndroidManifest.xml

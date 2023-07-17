@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/bg_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/dashboard_bg"
+                    android:paddingBottom="@dimen/margin_45">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/home_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="15dp"
+                        android:src="@drawable/lh_new_logo" />
+
+                    <TextView
+                        android:id="@+id/txt_bible_quote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/home_logo"
+                        android:layout_marginLeft="@dimen/margin_50"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/margin_50"
+                        android:gravity="center_horizontal"
+                        android:padding="@dimen/margin_10"
+                        android:text="@string/home_desc"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_15"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bg_lay"
+                    android:layout_marginLeft="@dimen/margin_15"
+                    android:layout_marginTop="-40dp"
+                    android:layout_marginRight="@dimen/margin_15"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:elevation="5dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/margin_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/textview_Curret_Date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_weight="1"
+                            android:drawableTop="@drawable/ic_calendar"
+                            android:drawablePadding="@dimen/margin_10"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/margin_10"
+                            android:textColor="@color/black"
+                            android:textSize="11sp" />
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:layout_marginBottom="@dimen/margin_10"
+                            android:background="@color/home_widgets_border" />
+
+                        <TextClock
+                            android:id="@+id/clock_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawableTop="@drawable/ic_time"
+                            android:drawablePadding="@dimen/margin_10"
+                            android:format12Hour="hh:mm aaa"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/margin_10"
+                            android:textColor="@color/black"
+                            android:textSize="11sp" />
+
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:layout_marginBottom="@dimen/margin_10"
+                            android:background="@color/home_widgets_border" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.agrawalsuneet.dotsloader.loaders.AllianceLoader
+                                android:id="@+id/loaderView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center_horizontal"
+                                app:alliance_animDuration="500"
+                                app:alliance_distanceMultiplier="4"
+                                app:alliance_dotsRadius="2.5dp"
+                                app:alliance_drawOnlyStroke="true"
+                                app:alliance_firstDotsColor="@color/purple_500"
+                                app:alliance_secondDotsColor="@color/purple_500"
+                                app:alliance_strokeWidth="2dp"
+                                app:alliance_thirdDotsColor="@color/purple_500" />
+
+                            <TextView
+                                android:id="@+id/textview_current_weather"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:drawableTop="@drawable/ic_rain__1_"
+                                android:drawablePadding="@dimen/margin_10"
+                                android:gravity="center_horizontal"
+                                android:padding="@dimen/margin_10"
+                                android:textColor="@color/black"
+                                android:textSize="11sp"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/cardView"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_40"
+                            android:text="@string/home_title"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerViewMenus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/title"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="16dp"
+                            android:overScrollMode="never" />
+
+                        <!-- <androidx.appcompat.widget.AppCompatImageView
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_alignParentBottom="true"
+                             android:layout_margin="@dimen/margin_20"
+                             android:visibility="gone"
+                             android:background="@drawable/android_banner"
+                             app:layout_constraintBottom_toBottomOf="parent" />-->
+
+                        <com.smarteist.autoimageslider.SliderView
+                            android:id="@+id/imageSlider"
+                            android:layout_width="match_parent"
+                            android:layout_height="220dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="@dimen/margin_20"
+                            android:layout_marginRight="@dimen/margin_20"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:sliderAnimationDuration="700"
+                            app:sliderAutoCycleDirection="back_and_forth"
+                            app:sliderAutoCycleEnabled="true"
+                            app:sliderIndicatorAnimationDuration="700"
+                            app:sliderIndicatorGravity="center_horizontal|bottom"
+                            app:sliderIndicatorMargin="15dp"
+                            app:sliderIndicatorMarginTop="@dimen/margin_10"
+                            app:sliderIndicatorOrientation="horizontal"
+                            app:sliderIndicatorPadding="3dp"
+                            app:sliderIndicatorRadius="2.5dp"
+                            app:sliderIndicatorSelectedColor="@color/indicator_selected"
+                            app:sliderIndicatorUnselectedColor="@color/indicator_un_selected"
+                            app:sliderScrollTimeInSec="1"
+                            app:sliderStartAutoCycle="true" />
+                    </LinearLayout>
+                </ScrollView>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:theme="@style/Theme.LifeHope.AppBarOverlay"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="15dp"
+                android:background="@android:color/transparent"
+                app:title=" ">
+
+                <FrameLayout
+                    android:id="@+id/notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:gravity="end">
+
+                    <ImageView
+                        android:id="@+id/imageViewBell"
+                        android:layout_width="@dimen/margin_30"
+                        android:layout_height="@dimen/margin_30"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="@dimen/margin_20"
+                        android:src="@drawable/ic_alarm_bell" />
+
+                    <ImageView
+                        android:id="@+id/imageViewBell_no"
+                        android:layout_width="@dimen/margin_15"
+                        android:layout_height="@dimen/margin_15"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="end"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/margin_5"
+                        android:layout_marginEnd="@dimen/margin_20"
+                        android:src="@drawable/dot" />
+                </FrameLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/mProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <!--<include layout="@layout/content_main" />-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

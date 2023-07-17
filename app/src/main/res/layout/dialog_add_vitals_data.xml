@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_30"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/margin_15">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/imageviewClose"
+            android:layout_width="@dimen/margin_20"
+            android:layout_height="@dimen/margin_20"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/margin_25"
+            android:background="@drawable/ic_close" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageviewClose"
+            android:layout_marginBottom="@dimen/margin_15">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_temperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_30"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    android:hint="@string/text_body_temp"
+                    android:textColorHint="@color/purple_500"
+                    app:layout_constraintTop_toBottomOf="@+id/imageviewClose">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edittext_temperature"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:maxLength="5"
+                        android:textSize="@dimen/text_15" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_breath_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_40"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    android:layout_marginBottom="@dimen/margin_15"
+                    android:hint="@string/text_spo2"
+                    android:textColorHint="@color/purple_500"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_temperature">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edittext_breathData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:singleLine="true"
+                        android:textSize="@dimen/text_15" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutElectrocardiogram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_40"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    android:layout_marginBottom="@dimen/margin_15"
+                    android:hint="@string/text_ecg"
+                    android:textColorHint="@color/purple_500"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_temperature">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextWeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"
+                        android:textSize="@dimen/text_15" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutBPM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_40"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    android:layout_marginBottom="@dimen/margin_15"
+                    android:hint="@string/text_bp"
+                    android:textColorHint="@color/purple_500"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_temperature">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edittextBPM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="7"
+                        android:singleLine="true"
+                        android:textSize="@dimen/text_15" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layoutBP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_40"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    android:layout_marginBottom="@dimen/margin_15"
+                    android:hint="@string/text_bpm"
+                    android:textColorHint="@color/purple_500"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_temperature">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edittextBP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:singleLine="true"
+                        android:textSize="@dimen/text_15" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.lifehopehealthapp.widgets.LifeHopeButton
+            android:id="@+id/buttonDone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_40"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:background="@drawable/divider_button_border"
+            android:gravity="center"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+</RelativeLayout>

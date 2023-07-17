@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/imageview_back_arrow"
+            android:layout_width="@dimen/margin_25"
+            android:layout_height="@dimen/margin_25"
+            android:layout_margin="@dimen/margin_20"
+            android:background="@drawable/ic_back_arrow_black_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_20"
+            android:gravity="center"
+            android:text="@string/text_select_date_time"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/header_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageview_add_member"
+            android:layout_width="@dimen/margin_25"
+            android:layout_height="@dimen/margin_25"
+            android:layout_margin="@dimen/margin_20"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_add_people" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/layoutCalenderView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/margin_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBookAppointment"
+        app:layout_constraintTop_toBottomOf="@+id/layout_header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardDoctorDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:elevation="@dimen/margin_5"
+                app:cardCornerRadius="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivDoctorProfilePicture"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/margin_15"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:src="@drawable/profile_img"
+                        app:civ_border_color="#FFFFFF"
+                        app:civ_border_width="1dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDoctorAvailability"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_10"
+                        android:gravity="center"
+                        android:text="@string/text_order_summary"
+                        android:textColor="@color/doctor_available"
+                        android:textSize="@dimen/text_13"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivDoctorProfilePicture" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDoctorName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_20"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/text_13"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/ivDoctorProfilePicture"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/text_order_summary" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDoctorDepartment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/text_light_color"
+                        android:textSize="@dimen/text_13"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/ivDoctorProfilePicture"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewDoctorName"
+                        tools:text="@string/text_order_summary" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDoctorLocation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/text_light_color"
+                        android:textSize="@dimen/text_13"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/ivDoctorProfilePicture"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewDoctorDepartment"
+                        tools:text="@string/text_order_summary" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewExperience"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:gravity="start"
+                        android:textColor="@color/share_border"
+                        android:textSize="@dimen/text_13"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/ivDoctorProfilePicture"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewDoctorLocation"
+                        tools:text="@string/text_order_summary" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewChat"
+                        android:layout_width="@dimen/margin_30"
+                        android:layout_height="@dimen/margin_30"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_15"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewExperience"
+                        app:srcCompat="@drawable/ic_chat" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewPhone"
+                        android:layout_width="@dimen/margin_30"
+                        android:layout_height="@dimen/margin_30"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_15"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewChat"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewExperience"
+                        app:srcCompat="@drawable/ic_phone" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewVideoCall"
+                        android:layout_width="@dimen/margin_30"
+                        android:layout_height="@dimen/margin_30"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_15"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageViewPhone"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewExperience"
+                        app:srcCompat="@drawable/ic_video" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewSelectDateTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20"
+                android:elevation="4dp"
+                app:cardCornerRadius="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDoctorDetails">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/margin_20">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textviewSelectDateTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/border"
+                        android:padding="@dimen/margin_10"
+                        android:text="@string/text_select_date_time"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerviewDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_20"
+                        app:layout_constraintTop_toBottomOf="@+id/textviewSelectDateTime" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutMorning"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/margin_40"
+                        android:layout_margin="@dimen/margin_20"
+                        android:background="@drawable/alert_bg"
+                        app:layout_constraintEnd_toStartOf="@+id/layoutEvening"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recyclerviewDate">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageviewMorning"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_20"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_morning" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textviewMorningLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_5"
+                            android:paddingRight="@dimen/margin_10"
+                            android:singleLine="true"
+                            android:text="@string/text_morning"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_12"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imageviewMorning"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutEvening"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/margin_40"
+                        android:layout_margin="@dimen/margin_20"
+                        android:background="@drawable/alert_bg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/layoutMorning"
+                        app:layout_constraintTop_toBottomOf="@+id/recyclerviewDate">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageviewEvening"
+                            android:layout_width="@dimen/margin_25"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginEnd="@dimen/margin_20"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_evening" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textview_eveningLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_5"
+                            android:layout_marginTop="@dimen/margin_5"
+                            android:layout_marginBottom="@dimen/margin_5"
+                            android:paddingRight="@dimen/margin_10"
+                            android:singleLine="true"
+                            android:text="@string/text_evening"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_12"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imageviewEvening"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- <GridView
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_margin="@dimen/margin_20"
+                         android:layout_marginBottom="@dimen/margin_20"
+                         android:numColumns="5"
+                         app:layout_constraintBottom_toBottomOf="parent"
+                         app:layout_constraintTop_toBottomOf="@+id/layout_eveng" />-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerviewTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_25"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:layout_marginRight="@dimen/margin_25"
+                        android:layout_marginBottom="@dimen/margin_20"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutEvening" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewNoData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:gravity="center"
+                        android:text="@string/there_is_no_timeslot_available_for_selected_date"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutEvening" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextAboutMe"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:background="@drawable/divider_edittext"
+                android:gravity="top|start"
+                android:hint="@string/text_about"
+                android:inputType="textCapWords|textMultiLine"
+                android:lineSpacingExtra="2.5sp"
+                android:maxLength="400"
+                android:overScrollMode="always"
+                android:padding="@dimen/margin_10"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_13"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewSelectDateTime" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonBookAppointment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:background="@drawable/button_theme_bg"
+        android:gravity="center"
+        android:text="@string/button_book_an_appointment"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

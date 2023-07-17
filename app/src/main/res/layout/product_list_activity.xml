@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/quantum_grey100"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/productListView"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="match_parent">
+
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBackArrow"
+        android:layout_width="@dimen/margin_25"
+        android:layout_height="@dimen/margin_25"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:src="@drawable/ic_back_arrow_black_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:gravity="center"
+        android:text="@string/ecommerce"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/header_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewHistory"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:layout_marginStart="@dimen/margin_20"
+        android:src="@drawable/ic_chat"
+        app:layout_constraintEnd_toStartOf="@+id/frameParentlay"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <FrameLayout
+            android:id="@+id/frameParentlay"
+            android:layout_width="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_15"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewCart"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_chat"
+                />
+
+
+
+
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="23dp"
+                android:backgroundTint="@color/red"
+                android:background="@drawable/circule"
+                android:layout_gravity="top|end"
+                android:layout_height="23dp"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productBadgeCount"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:gravity="center"
+                android:maxLength="3"
+                android:padding="2dp"
+                android:layout_gravity="center"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                />
+
+
+
+        </FrameLayout>
+
+
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewProductList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:gravity="center|start"
+        android:text="@string/products_list"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/header_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBackArrow" />
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/rvProductList"
+        android:layout_margin="@dimen/margin_10"
+        app:spanCount="2"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/item_product_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewProductList"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <com.lifehopehealthapp.widgets.LifeHopenTextView
+        android:id="@+id/textviewNoData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_no_data"
+        android:textColor="@color/black"
+        android:textSize="@dimen/margin_20"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/productDetailView"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:visibility="gone"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_height="match_parent">
+
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBackArrow"
+            android:layout_width="@dimen/margin_25"
+            android:layout_height="@dimen/margin_25"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:src="@drawable/ic_back_arrow_black_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_20"
+            android:gravity="center"
+            android:text="Product Details"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/header_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <FrameLayout
+        android:id="@+id/frameParentlay2"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_15"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCart"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_chat"
+            />
+
+
+
+
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_15"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="23dp"
+            android:backgroundTint="@color/red"
+            android:background="@drawable/circule"
+            android:layout_gravity="top|end"
+            android:layout_height="23dp"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productDetailBadgeCount"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:gravity="center"
+            android:maxLength="3"
+            android:padding="2dp"
+            android:layout_gravity="center"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            />
+
+
+
+    </FrameLayout>
+
+
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/productDetailImage"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:elevation="@dimen/margin_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivBackArrow"
+                android:layout_margin="@dimen/margin_20"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/ic_launcher"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_20"
+            app:layout_constraintTop_toBottomOf="@+id/productDetailImage"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDetailTitle"
+                        android:layout_width="match_parent"
+                        android:textSize="@dimen/text_14"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:text="Mask N-95"
+                        android:maxLines="2"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDetailPrice"
+                        android:layout_width="match_parent"
+                        android:textSize="@dimen/text_14"
+                        android:text="$20"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:textStyle="bold"
+                        android:singleLine="true"
+                        android:textColor="@color/purple_500"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <com.lifehopehealthapp.widgets.LifeHopeButton
+                        android:id="@+id/addQuantity"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="end"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/divider_button_border"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_14"
+                        android:padding="@dimen/margin_10"
+                        android:text="Add"
+                        android:textColor="@color/white" />
+
+
+                <com.lifehopehealthapp.utils.itembutton.ItemNumberButton
+                    android:id="@+id/btnQuantityValue"
+                      android:visibility="gone"
+                    android:gravity="end"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+
+
+
+
+
+            <com.lifehopehealthapp.widgets.LifeHopeButton
+                android:id="@+id/addToCart"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/divider_button_border"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_14"
+                android:padding="@dimen/margin_10"
+                android:text="@string/add_to_cart"
+                android:textColor="@color/white" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_14"
+                android:text="@string/product_description"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_height="wrap_content"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProductDescription"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:scrollbars="vertical"
+                android:maxLines="10"
+                android:fadeScrollbars="true"
+                android:lineSpacingExtra="3.5dp"
+                android:textSize="@dimen/text_14"
+                android:text="sdffjdhdskjfdsdsfdgfdgfdgfdfgfdsgdsfdsfdsfdsfsfsfdsfsfsfdsffdsfsfsfdsfdsused to refer to a thing or things belonging to or associated with two or more people or things previously mentioned.
+they think everything is theirs
+used to refer to a thing or things belonging to or associated with a person of unspecified gender.
+when someone dies the remainder of their pension should be theirs to will to whomever they want
+used to refer to a thing or things belonging to or associated with a person whose gender or sexual identity does not correspond to the traditional binary opposition of male and female."
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_height="wrap_content"/>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/productCartLay"
+        android:layout_height="match_parent">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivProductDetailBackArrow"
+                android:layout_width="@dimen/margin_25"
+                android:layout_height="@dimen/margin_25"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:src="@drawable/ic_back_arrow_black_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.lifehopehealthapp.widgets.LifeHopenTextView
+                android:id="@+id/tvProductDetailHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20"
+                android:gravity="center"
+                android:text="Cart"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/header_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+            <com.jcodecraeer.xrecyclerview.XRecyclerView
+                android:id="@+id/rvProductCartList"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_cart_list"
+                android:layout_marginBottom="@dimen/margin_10"
+                app:layout_constraintTop_toBottomOf="@+id/ivProductDetailBackArrow"
+                app:layout_constraintBottom_toTopOf="@+id/paymentDetailView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+
+
+
+            <LinearLayout
+                android:id="@+id/paymentDetailView"
+                android:layout_width="match_parent"
+                android:elevation="@dimen/margin_5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:orientation="vertical"
+                android:background="@drawable/divider_bottom_sheet_corner"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/deliverAddress"
+                            android:textSize="@dimen/text_14"
+                            android:padding="@dimen/margin_5"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:layout_marginStart="@dimen/margin_10"
+                            android:layout_marginEnd="@dimen/margin_10"
+                            android:layout_width="match_parent"
+                            android:text="Deliver Address :"
+                            android:layout_height="wrap_content">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/address"
+                            android:singleLine="true"
+                            android:textSize="@dimen/text_14"
+                            android:padding="@dimen/margin_5"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="@dimen/margin_10"
+                            android:layout_marginEnd="@dimen/margin_10"
+                            android:layout_width="match_parent"
+                            android:text="8th flower,Nava india,peelemedu,avanishi road,Coimbatore"
+                            android:layout_height="wrap_content">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+
+
+
+                    </LinearLayout>
+
+
+
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/editAddress"
+                        android:layout_width="match_parent"
+                        android:src="@drawable/ic_edit_black"
+                        android:layout_weight="4"
+                        android:layout_gravity="center"
+                        android:backgroundTint="@color/black"
+                        android:layout_height="wrap_content">
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="@dimen/margin_15"
+                    android:layout_marginEnd="@dimen/margin_15"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:background="@color/quantum_grey200"
+                    android:layout_height="1dp"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:layout_height="wrap_content">
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:textSize="@dimen/text_20"
+                            android:paddingEnd="@dimen/margin_5"
+                            android:paddingTop="@dimen/margin_5"
+                            android:paddingBottom="@dimen/margin_5"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:gravity="center|start"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/margin_20"
+                            android:layout_marginEnd="@dimen/margin_10"
+                            android:layout_width="match_parent"
+                            android:text="$957"
+                            android:layout_height="wrap_content">
+
+                        </androidx.appcompat.widget.AppCompatTextView>
+
+
+
+
+
+
+
+                    </LinearLayout>
+
+                    <com.lifehopehealthapp.widgets.LifeHopeButton
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_20"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/divider_button_border"
+                        android:gravity="center"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/text_14"
+                        android:padding="@dimen/margin_10"
+                        android:text="@string/text_proceed_to_pay"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+

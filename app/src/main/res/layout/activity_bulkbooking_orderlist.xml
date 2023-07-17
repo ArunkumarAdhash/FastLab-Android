@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imageViewBackArrow"
+        android:layout_width="@dimen/margin_25"
+        android:layout_height="@dimen/margin_25"
+        android:layout_margin="@dimen/margin_20"
+        android:background="@drawable/ic_back_arrow_black_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:gravity="center"
+        android:text="@string/text_bulk_booking"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/header_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHeading">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHeading">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20"
+                android:elevation="4dp"
+                app:cardCornerRadius="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_user_name">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textview_test_details_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/border"
+                        android:lineSpacingExtra="6.5sp"
+                        android:paddingStart="@dimen/margin_15"
+                        android:paddingTop="@dimen/margin_5"
+                        android:paddingBottom="@dimen/margin_5"
+                        android:text="@string/text_order_summary"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textview_test_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_15"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:lineSpacingExtra="5.5sp"
+                        android:text="@string/text_total_cost"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/text_12"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_test_details_label" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewTestAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_15"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_15"
+                        android:lineSpacingExtra="5.5sp"
+                        android:text="$ 3,432"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/text_11"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_test_details_label" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textview_test_description"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_15"
+                        android:lineSpacingExtra="4.5sp"
+                        android:text="@string/text_cost_per_person"
+                        android:textColor="@color/black"
+                        android:textSize="9sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_test_heading" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewSurfaceTest"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_15"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:lineSpacingExtra="5.5sp"
+                        android:text="@string/text_total_cost_surface"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/text_12"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_test_description" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewSurfaceTestAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_15"
+                        android:lineSpacingExtra="5.5sp"
+                        android:text="$ 3,432"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/text_11"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_test_description" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewTestDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_15"
+                        android:lineSpacingExtra="4.5sp"
+                        android:text="@string/text_cost_per_surface"
+                        android:textColor="@color/black"
+                        android:textSize="9sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewSurfaceTest" />
+
+                    <View
+                        android:id="@+id/mView"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/margin_15"
+                        android:background="@color/grey"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewTestDescription" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewTotalCostMonth"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_15"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:lineSpacingExtra="5.5sp"
+                        android:text="@string/text_total_cost_monthly"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/text_12"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mView" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewMonthlyTestAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_15"
+                        android:lineSpacingExtra="5.5sp"
+                        android:text="$ 3,432"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/text_11"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mView" />
+
+                    <View
+                        android:id="@+id/mView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/margin_15"
+                        android:background="@color/grey"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewMonthlyTestAmount" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/mView1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:weightSum="2"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/textViewTestForPeople"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/margin_15"
+                                    android:layout_marginTop="@dimen/margin_10"
+                                    android:layout_marginBottom="@dimen/margin_15"
+                                    android:layout_weight="1"
+                                    android:lineSpacingExtra="5.5sp"
+                                    android:text="@string/text_total_monthly_test_people"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_12" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/textViewAmount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/margin_5"
+                                    android:layout_marginEnd="@dimen/margin_20"
+                                    android:gravity="center"
+                                    android:lineSpacingExtra="5.5sp"
+                                    android:text=" 2212"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="@dimen/text_11"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/textViewTestForSurface"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/margin_15"
+                                    android:layout_marginTop="@dimen/margin_10"
+                                    android:layout_marginEnd="@dimen/margin_5"
+                                    android:layout_marginBottom="@dimen/margin_15"
+                                    android:layout_weight="1"
+                                    android:lineSpacingExtra="5.5sp"
+                                    android:text="@string/text_total_monthly_test_surface"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_12" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/textViewAmount1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/margin_5"
+                                    android:layout_marginEnd="@dimen/margin_20"
+                                    android:lineSpacingExtra="5.5sp"
+                                    android:text=" 2212"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="@dimen/text_11"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                            <!-- <LinearLayout
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:orientation="horizontal"
+                                 app:layout_constraintStart_toStartOf="parent"
+                                 app:layout_constraintTop_toTopOf="parent">
+
+
+                             </LinearLayout>
+
+                             <LinearLayout
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_weight="1"
+                                 android:orientation="horizontal">
+
+
+
+                             </LinearLayout>
+ -->
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutNoOfStudent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_15"
+                android:textColorHint="@color/purple_500"
+                app:layout_constraintEnd_toStartOf="@+id/layoutStudentFrequency"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDetails">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextNoOfStudent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="number|textNoSuggestions"
+                    android:maxLength="6"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_15" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutStudentFrequency"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_15"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:textColorHint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/layoutNoOfStudent"
+                app:layout_constraintTop_toBottomOf="@+id/cardDetails">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextStudentFrequency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="@string/text_frequency"
+                    android:imeOptions="actionNext"
+                    android:inputType="number|textNoSuggestions"
+                    android:maxLength="1"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_15" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutNoOfTeacher"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:textColorHint="@color/purple_500"
+                app:layout_constraintEnd_toStartOf="@+id/layoutTeacherFrequency"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutNoOfStudent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextNoOfTeacher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="number|textNoSuggestions"
+                    android:maxLength="6"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_15" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutTeacherFrequency"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_15"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:textColorHint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/layoutNoOfTeacher"
+                app:layout_constraintTop_toBottomOf="@+id/layoutNoOfStudent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextTeacherFrequency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="@string/text_frequency"
+                    android:imeOptions="actionNext"
+                    android:inputType="number|textNoSuggestions"
+                    android:maxLength="1"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_15" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutNoOfCoaches"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:textColorHint="@color/purple_500"
+                app:layout_constraintEnd_toStartOf="@+id/layoutCoachesFrequency"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutNoOfTeacher">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextNoOfCoaches"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="number|textNoSuggestions"
+                    android:maxLength="6"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_15" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutCoachesFrequency"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_15"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:textColorHint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/layoutNoOfCoaches"
+                app:layout_constraintTop_toBottomOf="@+id/layoutTeacherFrequency">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCoachesFrequency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="@string/text_frequency"
+                    android:imeOptions="actionNext"
+                    android:inputType="number|textNoSuggestions"
+                    android:maxLength="1"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_15" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutNoOfDrivers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:textColorHint="@color/purple_500"
+                app:layout_constraintEnd_toStartOf="@+id/layoutDriversFrequency"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutNoOfCoaches">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextNoOfDrivers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="number|textNoSuggestions"
+                    android:maxLength="6"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_15" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutDriversFrequency"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_15"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:textColorHint="@color/purple_500"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/layoutNoOfDrivers"
+                app:layout_constraintTop_toBottomOf="@+id/layoutCoachesFrequency">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextDriversFrequency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="@string/text_frequency"
+                    android:imeOptions="actionDone"
+                    android:inputType="number|textNoSuggestions"
+                    android:maxLength="1"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_15" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardOneYearOffer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutNoOfDrivers">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewOneYrContractLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/border"
+                        android:lineSpacingExtra="6.5sp"
+                        android:paddingStart="@dimen/margin_15"
+                        android:paddingTop="@dimen/margin_5"
+                        android:paddingBottom="@dimen/margin_5"
+                        android:text="@string/text_one_yr_contract"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:text="25% Savings"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewOneYrContractLabel" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewOffer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginEnd="@dimen/margin_20"
+                        android:text="@string/text_one_year_contract"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/text_13"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/radioButton1" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewSaveAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:lineSpacingExtra="5.5sp"
+                        android:text="$ 3,432"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/text_12"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewOffer" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewOfferAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:lineSpacingExtra="5.5sp"
+                        android:text=""
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/text_12"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textViewSaveAmount"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewOffer" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTwoYearOffer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardOneYearOffer">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewTwoYrContractLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/border"
+                        android:lineSpacingExtra="6.5sp"
+                        android:paddingStart="@dimen/margin_15"
+                        android:paddingTop="@dimen/margin_5"
+                        android:paddingBottom="@dimen/margin_5"
+                        android:text="@string/text_two_yr_contract"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_20"
+                        android:text="50% Savings"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewTwoYrContractLabel" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewOffer1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginEnd="@dimen/margin_20"
+                        android:padding="@dimen/margin_5"
+                        android:text="@string/text_two_year_contract"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/text_13"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewSaveAmount1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:lineSpacingExtra="5.5sp"
+                        android:text="$ 3,432"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/text_12"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewOffer1" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewOfferAmount1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:lineSpacingExtra="5.5sp"
+                        android:text="$ 3,432"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/text_12"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textViewSaveAmount1"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewOffer1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardOneMonthOffer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardTwoYearOffer">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewOneMonthContractLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/border"
+                        android:lineSpacingExtra="6.5sp"
+                        android:paddingStart="@dimen/margin_15"
+                        android:paddingTop="@dimen/margin_5"
+                        android:paddingBottom="@dimen/margin_5"
+                        android:text="@string/text_two_yr_contract"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButton3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_10"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_20"
+                        android:text="50% Savings"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewOneMonthContractLabel" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewOffer2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginEnd="@dimen/margin_20"
+                        android:padding="@dimen/margin_5"
+                        android:text="@string/text_two_year_contract"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/text_13"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/radioButton3" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewSaveAmount2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:lineSpacingExtra="5.5sp"
+                        android:text="$ 3,432"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/text_12"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewOffer2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkBoxCondition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                app:layout_constraintBottom_toTopOf="@+id/buttonProceedToPay"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardOneMonthOffer" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTerms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:text="@string/text_i_Agree"
+                app:layout_constraintBottom_toTopOf="@+id/buttonProceedToPay"
+                app:layout_constraintStart_toEndOf="@+id/checkBoxCondition"
+                app:layout_constraintTop_toBottomOf="@+id/cardOneMonthOffer" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonProceedToPay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_25"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:background="@drawable/divider_button_border"
+                android:gravity="center"
+                android:text="@string/text_proceed_to_pay"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

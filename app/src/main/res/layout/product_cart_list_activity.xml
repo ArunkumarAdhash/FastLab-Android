@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/quantum_grey200">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBackArrow"
+        android:layout_width="@dimen/margin_25"
+        android:layout_height="@dimen/margin_25"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:src="@drawable/ic_back_arrow_black_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.lifehopehealthapp.widgets.LifeHopenTextView
+        android:id="@+id/textViewHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:gravity="center"
+        android:text="Cart"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/header_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/rvProductCartList"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginEnd="@dimen/margin_10"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_cart_list"
+        android:layout_marginBottom="@dimen/margin_10"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBackArrow"
+        app:layout_constraintBottom_toTopOf="@+id/paymentDetailView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/paymentDetailView"
+        android:layout_width="match_parent"
+        android:elevation="@dimen/margin_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        android:background="@drawable/divider_bottom_sheet_corner"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/deliverAddress"
+            android:textSize="@dimen/text_14"
+            android:padding="@dimen/margin_5"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_width="match_parent"
+            android:text="Deliver Address :"
+            android:layout_height="wrap_content">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/address"
+            android:singleLine="true"
+            android:textSize="@dimen/text_14"
+            android:padding="@dimen/margin_5"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_width="match_parent"
+            android:text="8th flower,Nava india,peelemedu,avanishi road,Coimbatore"
+            android:layout_height="wrap_content">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/editAddress"
+                android:layout_width="match_parent"
+                android:src="@drawable/ic_edit_black"
+                android:layout_weight="4"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/black"
+                android:layout_height="wrap_content">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/margin_15"
+            android:layout_marginEnd="@dimen/margin_15"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_5"
+            android:background="@color/quantum_grey200"
+            android:layout_height="1dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:layout_height="wrap_content">
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:textSize="@dimen/text_20"
+                android:paddingEnd="@dimen/margin_5"
+                android:paddingTop="@dimen/margin_5"
+                android:paddingBottom="@dimen/margin_5"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="center|start"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_width="match_parent"
+                android:text="$957"
+                android:layout_height="wrap_content">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+            <com.lifehopehealthapp.widgets.LifeHopeButton
+                android:layout_marginBottom="@dimen/margin_10"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@drawable/divider_button_border"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_14"
+                android:padding="@dimen/margin_10"
+                android:text="@string/text_proceed_to_pay"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

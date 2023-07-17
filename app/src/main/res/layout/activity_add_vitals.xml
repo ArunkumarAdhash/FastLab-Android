@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imageviewClose"
+        android:layout_width="@dimen/margin_25"
+        android:layout_height="@dimen/margin_25"
+        android:layout_margin="@dimen/margin_15"
+        android:background="@drawable/ic_back_arrow_black_icon"
+        android:textColor="@color/schedule_time"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_15"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textViewAddVitals"
+        app:layout_constraintStart_toEndOf="@+id/imageviewClose"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewAddVitals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:text="@string/button_add"
+        android:textColor="@color/info_color"
+        android:textSize="@dimen/text_15"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/mView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin_15"
+        android:background="@color/dashboard_item_border"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHeading" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:text="@string/text_date"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_15"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mView" />
+
+    <View
+        android:id="@+id/mDateView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin_15"
+        android:background="@color/dashboard_item_border"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDate" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:text="@string/text_time_label"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintBottom_toTopOf="@+id/mTimeView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mDateView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_15"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/mTimeView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mDateView" />
+
+    <View
+        android:id="@+id/mTimeView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin_15"
+        android:background="@color/dashboard_item_border"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTime" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBodyTemperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/mTimeView">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTemperatureLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginEnd="@dimen/margin_15"
+            android:text="@string/text_body_temp_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_body_temp_text_label"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextBodyTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15"
+            android:background="@null"
+            android:gravity="end"
+            android:hint="@string/_94_f_to_115_7_f"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:maxLength="5"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_15"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textViewTemperatureLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_15"
+            android:background="@color/dashboard_item_border"
+            app:layout_constraintTop_toBottomOf="@+id/editTextBodyTemperature" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutOxygenLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/layoutBodyTemperature">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_oxygen_level_text_label"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewOxygenLevelLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_oxygen_level_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextOxygenLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:background="@null"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:hint="@string/_90_to_100"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="3"
+            android:singleLine="true"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_15"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textViewOxygenLevelLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_15"
+            android:background="@color/dashboard_item_border"
+            app:layout_constraintTop_toBottomOf="@+id/editTextOxygenLevel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/layoutOxygenLevel">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_weight_text_label"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewWeightLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_weight_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:background="@null"
+            android:gravity="end"
+            android:hint="@string/_66_to_999"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_15"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textViewWeightLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_15"
+            android:background="@color/dashboard_item_border"
+            app:layout_constraintTop_toBottomOf="@+id/editTextWeight" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutHeartRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/layoutWeight">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_heart_rate_text_label"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewBPMLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_heart_rate_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextHeartRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:autoText="false"
+            android:background="@null"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:hint="@string/_60_to_170"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_15"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textViewBPMLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_15"
+            android:background="@color/dashboard_item_border"
+            app:layout_constraintTop_toBottomOf="@+id/editTextHeartRate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBloodPressure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeartRate">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_systolic_label"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewSysLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_sys_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextSystolic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:background="@null"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:hint="@string/sys"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_15"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textViewSysLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/mViewSystolic"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_15"
+            android:background="@color/dashboard_item_border"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSystolic" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_diastolic_label"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mViewSystolic" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDiaLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_sys_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mViewSystolic" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextDiastolic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:background="@null"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:hint="@string/dia"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_15"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textViewDiaLabel"
+            app:layout_constraintTop_toBottomOf="@+id/mViewSystolic" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_15"
+            android:background="@color/dashboard_item_border"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDiastolic" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBloodGlucose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/layoutBloodPressure">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_meal_type"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerMealType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:autofillHints="Select Type"
+            android:background="@null"
+            android:gravity="end"
+            android:spinnerMode="dialog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/mViewGlucose"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_15"
+            android:background="@color/dashboard_item_border"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerMealType" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_glucose_text_label"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mViewGlucose" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewGlucoseLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:text="@string/text_glucose_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mViewGlucose" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextGlucose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:background="@null"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:hint="@string/hint_glucose"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_15"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textViewGlucoseLabel"
+            app:layout_constraintTop_toBottomOf="@+id/mViewGlucose" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_15"
+            android:background="@color/dashboard_item_border"
+            app:layout_constraintTop_toBottomOf="@+id/editTextGlucose" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonAddVitals"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:background="@drawable/divider_button_border"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="@string/button_add"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

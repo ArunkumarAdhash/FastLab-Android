@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="center_vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/alert_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <com.lifehopehealthapp.widgets.LifeHopenTextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingTop="@dimen/margin_15"
+                android:text="@string/no_internet_msg"
+                android:textColor="@color/red"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_40"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15"
+                android:orientation="horizontal">
+
+                <com.lifehopehealthapp.widgets.LifeHopeButton
+                    android:id="@+id/button_failure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_theme_bg"
+                    android:text="@string/close"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/view_gap"
+                    android:layout_width="@dimen/margin_30"
+                    android:layout_height="0dp"
+                    android:visibility="gone" />
+
+                <com.lifehopehealthapp.widgets.LifeHopeButton
+                    android:id="@+id/button_success"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_theme_bg"
+                    android:text="@string/ok"
+                    android:gravity="center"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginBottom="90dp"
+            android:src="@drawable/ic_no_internet"
+            app:civ_border_color="#FFFFFF"
+            app:civ_border_overlay="true"
+            app:civ_border_width="2dp" />
+    </FrameLayout>
+</LinearLayout>

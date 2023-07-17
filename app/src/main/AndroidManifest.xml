@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lifehopehealthapp">
+
+    <!--<uses-permission android:name="BLAH" /-->
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:strict="" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name="com.lifehopehealthapp.LifeHopeApplication"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LifeHope"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name=".splash.SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.splash"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.lifehopehealthapp.blueTooth.SerialService" />
+
+        <activity android:name="com.lifehopehealthapp.blueTooth.MainActivity" />
+        <activity
+            android:name="com.lifehopehealthapp.symptomSearch.UserDetails.UserDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+
+        <activity
+            android:name="com.lifehopehealthapp.dashBoard.DashBoardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar">
+            <!-- <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>-->
+        </activity>
+        <!-- uCrop cropping activity -->
+        <!--<activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+-->
+        <!-- cache directory file provider paths -->
+        <!--<activity
+            android:name=".utils.ImagePickerActivity"
+            android:screenOrientation="portrait"/>-->
+        <!--<activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />-->
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="com.lifehopehealthapp.notificationList.NotificationListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar">
+
+        </activity>
+        <activity
+            android:name="com.lifehopehealthapp.trackTestOrders.TrackOrderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name="com.lifehopehealthapp.bulkBooking.organizationType.OrganizationTypeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name="com.lifehopehealthapp.vaccineReport.VaccineReportActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name="com.lifehopehealthapp.Appointments.IntroActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar">
+
+        </activity>
+        <activity
+            android:name="com.lifehopehealthapp.Calls.Video.VideoChatViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+
+        <activity
+            android:name="com.lifehopehealthapp.WebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+
+        <activity
+            android:name="com.lifehopehealthapp.doctorDetailPage.DoctorDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name="com.lifehopehealthapp.doctorAppointmentDates.SetAppointmentDateActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar">
+
+        </activity>
+
+
+        <activity
+            android:name="com.lifehopehealthapp.utils.DocumentViewerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+
+        <activity
+            android:name="com.lifehopehealthapp.bulkBooking.orderList.BulkBookingOrderListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar">
+
+        </activity>
+        <activity
+            android:name="com.lifehopehealthapp.webview.WebViewPaymentActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.doctorList.DoctorListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.vitals.AddVitals.AddVitalsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysVisible|adjustResize" />
+
+        <activity
+            android:name="com.lifehopehealthapp.PDFView.PDFWebView"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.vitals.BloodGlucose.BloodGlucoseActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.bulkBooking.organizationDetails.BulkBookingActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+
+        <activity
+            android:name=".bulkBookingNew.NewBulkBookingActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+
+        <activity
+            android:name=".productlist.ProductListActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+
+
+        <activity
+            android:name=".utils.ImageViewActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+
+
+        <activity
+            android:name=".productdetail.ProductDetailActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+
+        <activity
+            android:name=".productcart.ProductCartActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+
+
+
+        <activity
+            android:name=".bulkbookingNewOrderList.NewBulkBookingOrderListActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+
+
+
+
+        <activity
+            android:name="com.lifehopehealthapp.vitals.TemperatureDetailPage.TemperatureDetailActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.vitals.OxygenLevelDetailPage.OxygenLevelDetailActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.vitals.BloodPressureDetailPage.BloodPressureDetailActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.bulkBooking.mailScreen.ResendMailActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.vitals.WeightDetailPage.WeightDetailActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity android:name="com.lifehopehealthapp.vitals.Demo.Demo" />
+        <activity
+            android:name="com.lifehopehealthapp.vitals.ECGDetailPage.ECGDetailActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.vitals.BPMDetailPage.BPMDetailActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.signUp.SignUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.scanner.ScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.login.LogInActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.mobileOtpVerify.MobileOTPVerifyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.myProfile.MyProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.myProfile.MapsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.lifehopehealthapp.editProfile.EditProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.bookingList.TestBookingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.scheduleDateTime.ScheduleDateTimeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.orderSummary.OrderSummaryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.myTestOrderList.MyTestOrderListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+
+        <activity
+            android:name="com.lifehopehealthapp.utils.PaymentCompleteActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.labResultList.LabResultListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.labResult.LabResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.symptomSearch.Questions.SymptomSearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.PDFViewer.PdfViewerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.symptomSearch.DiagnosisList.DiagnosisListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.symptomSearch.DiagnosisResult.DiagnosisResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar">
+            <!-- <intent-filter>
+                 <action android:name="android.intent.action.SEND" />
+                 <category android:name="android.intent.category.DEFAULT" />
+                 <data android:mimeType="*/*" />
+             </intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.lifehopehealthapp.symptomSearch.Concerns.ConcernsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.symptomSearch.DiagnosisHistory.DiagnosisHistoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.symptomSearch.DiagnosisHistoryDetail.DiagnosisHistoryDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.vitals.VitalsCategoryList.VitalsCategoryListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.vitals.VitalsHistory.VitalsHistoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+        <activity
+            android:name="com.lifehopehealthapp.symptomSearch.DiagnosisHistoryList.DiagnosisHistoryListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar" />
+
+        <activity
+            android:name="com.lifehopehealthapp.covidstatus.CovidStatusActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LifeHope.NoActionBar">
+
+        </activity>
+
+
+        <!-- [START firebase_service] -->
+        <service
+            android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"
+            android:enabled="true" />
+        <service
+            android:name="com.lifehopehealthapp.FCM.FirebaseNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- [END firebase_service] -->
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
+            android:value="false" />
+        <meta-data
+            android:name="com.facebook.sdk.AdvertiserIDCollectionEnabled"
+            android:value="false" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/googleID" />
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="false" />
+        <!-- <meta-data
+             android:name="com.google.test.loops"
+             android:value="5" />-->
+        <!-- <uses-library android:name="android.test.runner" />
+         <instrumentation android:name="android.test.InstrumentationTestRunner"
+             android:targetPackage="com.lifehope"
+             android:label="@string/app_name" />-->
+    </application>
+
+</manifest>

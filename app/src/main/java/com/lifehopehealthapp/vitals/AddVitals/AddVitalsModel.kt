@@ -1,0 +1,17 @@
+package com.lifehopehealthapp.vitals.AddVitals
+
+import com.google.gson.JsonObject
+import com.lifehopehealthapp.base.BaseRepository
+import com.lifehopehealthapp.retrofitService.APIManager
+import com.lifehopehealthapp.utils.PreferenceHelper
+
+class AddVitalsModel(val api: APIManager, val preferences: PreferenceHelper) :
+    BaseRepository() {
+    suspend fun saveVitalsData(value: String, request: JsonObject) = safeApiCall {
+        api.saveVitalsData(value, request)
+    }
+
+    suspend fun getGlucoseList(value: String, request: JsonObject) = safeApiCall {
+        api.getGlucoseList(value, request)
+    }
+}

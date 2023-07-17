@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardOneYearOffer"
+        android:layout_width="match_parent"
+        android:elevation="4dp"
+        app:cardCornerRadius="@dimen/margin_5"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_15"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contractRecyclerView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewContractLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/border"
+                android:lineSpacingExtra="6.5sp"
+                android:paddingStart="@dimen/margin_15"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/text_one_yr_contract"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                tools:text="25% Savings"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewContractLabel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                tools:text="@string/text_one_year_contract"
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/text_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewOfferAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:lineSpacingExtra="5.5sp"
+                tools:text="$ 3,432"
+                android:paddingBottom="@dimen/margin_10"
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/text_13"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTotalAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:lineSpacingExtra="5.5sp"
+                tools:text="$ 3,432"
+                android:paddingBottom="@dimen/margin_10"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text_13"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textViewOfferAmount"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSavingAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:lineSpacingExtra="5.5sp"
+                tools:text="Savings on this plan :"
+                android:textColor="@color/green"
+                android:textSize="@dimen/text_13"
+                android:visibility="gone"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewOfferAmount" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

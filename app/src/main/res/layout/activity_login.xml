@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewMobile"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="@dimen/margin_10"
+        app:layout_constraintBottom_toTopOf="@+id/textViewHeading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/image_otp_mobile" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_50"
+        android:gravity="center"
+        android:text="@string/text_enter_mobile_number"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_15"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewMobileNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_40"
+        android:layout_marginTop="@dimen/margin_50"
+        android:text="@string/text_mobile_number"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_15"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHeading" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_40"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_40"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMobileNumber">
+
+        <com.rilixtech.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:ccp_defaultCode="91"
+            app:ccp_enableHint="false"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textviewCountryCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="+1 "
+            android:textColor="@color/black"
+            android:textSize="@dimen/margin_20"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/ediitextMobileNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_40"
+            android:background="@color/transparent"
+            android:digits="0123456789"
+            android:inputType="phone"
+            android:imeOptions="actionDone"
+            android:maxLength="14"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/textviewCountryCode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/ediitextMobileNumber" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.lifehopehealthapp.widgets.LifeHopeButton
+        android:id="@+id/buttonNext"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_40"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:background="@drawable/divider_button_border"
+        android:gravity="center"
+        android:text="@string/button_next"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

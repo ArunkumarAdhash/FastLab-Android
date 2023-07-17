@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/imageview_back_arrow"
+            android:layout_width="@dimen/margin_25"
+            android:layout_height="@dimen/margin_25"
+            android:layout_margin="@dimen/margin_20"
+            android:background="@drawable/ic_back_arrow_black_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_20"
+            android:gravity="center"
+            android:text="@string/text_order_summary"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/header_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageview_add_member"
+            android:layout_width="@dimen/margin_25"
+            android:layout_height="@dimen/margin_25"
+            android:layout_margin="@dimen/margin_20"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_add_people" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_test_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:elevation="4dp"
+        app:cardCornerRadius="@dimen/margin_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_user_name">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_test_details_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/border"
+                android:lineSpacingExtra="6.5sp"
+                android:paddingStart="@dimen/margin_15"
+                android:paddingTop="@dimen/margin_5"
+                android:paddingBottom="@dimen/margin_5"
+                android:text="@string/text_test_details"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/textview_mobile_info_label"
+                android:layout_width="@dimen/margin_50"
+                android:layout_height="@dimen/margin_50"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_test_details_label"
+                app:srcCompat="@drawable/ic_covid_19" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_test_heading"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:lineSpacingExtra="5.5sp"
+                android:text="@string/text_test_heading"
+                android:textColor="@color/test_heading"
+                android:textSize="@dimen/text_12"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textview_mobile_info_label"
+                app:layout_constraintTop_toBottomOf="@+id/textview_test_details_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_test_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:lineSpacingExtra="4.5sp"
+                android:text="@string/text_test_description"
+                android:textColor="@color/black"
+                android:textSize="9sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textview_mobile_info_label"
+                app:layout_constraintTop_toBottomOf="@+id/textview_test_heading" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_SelectDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:lineSpacingExtra="5sp"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/button_cancel"
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/text_11"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textview_mobile_info_label"
+                app:layout_constraintTop_toBottomOf="@+id/textview_test_description" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_person_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:elevation="4dp"
+        app:cardCornerRadius="@dimen/margin_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_test_details">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_user_name">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_contact_details_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/border"
+                android:lineSpacingExtra="6.5sp"
+                android:paddingStart="@dimen/margin_15"
+                android:paddingTop="@dimen/margin_5"
+                android:paddingBottom="@dimen/margin_5"
+                android:text="@string/text_contact_details"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageview_editProfile"
+                android:layout_width="@dimen/margin_15"
+                android:layout_height="@dimen/margin_15"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:tint="@color/dashboard_item_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_edit_black" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_Profile_Image"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="@dimen/margin_15"
+                android:layout_marginTop="@dimen/margin_20"
+                android:src="@drawable/ic_person"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp"
+                app:layout_constraintEnd_toStartOf="@+id/textview_user_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_contact_details_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_user_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:lineSpacingExtra="6.5sp"
+                android:text="@string/text_test_heading"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_13"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/user_Profile_Image"
+                app:layout_constraintTop_toBottomOf="@+id/textview_contact_details_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_user_mobile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:lineSpacingExtra="6.5sp"
+                android:text="@string/text_test_heading"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_11"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/user_Profile_Image"
+                app:layout_constraintTop_toBottomOf="@+id/textview_user_name" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/user_Profile_Image"
+                app:layout_constraintTop_toBottomOf="@+id/textview_user_mobile">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textview_user_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_20"
+                    android:text="@string/text_test_heading"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_payment_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_30"
+        android:elevation="4dp"
+        app:cardCornerRadius="@dimen/margin_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_person_details">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_user_name">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_payment_details_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/border"
+                android:paddingStart="@dimen/margin_15"
+                android:paddingTop="@dimen/margin_5"
+                android:paddingBottom="@dimen/margin_5"
+                android:text="@string/text_payment_details"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_test_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:lineSpacingExtra="5.5sp"
+                android:text="@string/text_surface_test"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_11"
+                app:layout_constraintEnd_toStartOf="@+id/textview_test_amount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_payment_details_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_test_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:text="$ 254"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_11"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_payment_details_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_test_kit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_5"
+                android:lineSpacingExtra="5.5sp"
+                android:text="@string/test_kit"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_11"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_test_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_test_kit_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:text="$54"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_11"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_test_amount" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_shipping_charge_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_5"
+                android:drawableRight="@drawable/ic_info_order_sum"
+                android:drawablePadding="@dimen/margin_5"
+                android:lineSpacingExtra="5.5sp"
+                android:text="@string/shipping_charge"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_11"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_test_kit" />
+
+            <!--  <androidx.appcompat.widget.AppCompatImageView
+                  app:layout_constraintTop_toBottomOf="@+id/textview_test_kit"
+                  app:srcCompat="@drawable/ic_info_order_sum"
+                  app:layout_constraintStart_toStartOf="@+id/textview_shipping_charge_label"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"/>
+-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_shipping_charge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:text="$18"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_11"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_test_kit_amount" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_tax_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_5"
+                android:lineSpacingExtra="5.5sp"
+                android:text="@string/tax_label"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_11"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_shipping_charge_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_tax_charge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:text="$10"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_11"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_shipping_charge" />
+
+            <View
+                android:id="@+id/mView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_5"
+                android:background="@color/dashboard_item_border"
+                app:layout_constraintTop_toBottomOf="@+id/textview_tax_charge" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_total_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:lineSpacingExtra="5.5sp"
+                android:text="@string/total_label"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_11"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_total_charge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:text="$395"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_11"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonBookNow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:background="@drawable/button_theme_bg"
+        android:gravity="center"
+        android:text="@string/button_proceed"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

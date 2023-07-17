@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_margin="@dimen/margin_20"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.lifehopehealthapp.widgets.LifeHopenTextView
+        android:id="@+id/textview_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_30"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="@string/text_heading"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.lifehopehealthapp.widgets.LifeHopenTextView
+        android:id="@+id/textview_dialog_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:gravity="center"
+        android:padding="@dimen/margin_10"
+        android:text="@string/text_check_mobile"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintTop_toBottomOf="@+id/textview_header" />
+
+    <com.lifehopehealthapp.widgets.LifeHopeButton
+        android:id="@+id/button_proceed"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_40"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_40"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_40"
+        android:background="@drawable/divider_button_border"
+        android:gravity="center"
+        android:text="@string/done"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/button_cancel"
+        app:layout_constraintTop_toBottomOf="@+id/textview_dialog_heading" />
+</LinearLayout>

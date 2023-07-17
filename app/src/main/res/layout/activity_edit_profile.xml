@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapseLay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="?android:textAppearanceMedium"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_ProfileImage"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:background="@drawable/layout_profile_bg"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageview_back_arrow"
+                    android:layout_width="@dimen/margin_20"
+                    android:layout_height="@dimen/margin_20"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_left_arrow" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textview_profileSetting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:gravity="center"
+                    android:text="@string/text_profile_information"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/header_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageview_back_arrow"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/imageview_edit"
+                                    android:layout_width="@dimen/margin_20"
+                                    android:layout_height="@dimen/margin_20"
+                                    android:layout_marginTop="@dimen/margin_20"
+                                    android:layout_marginEnd="@dimen/margin_20"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/ic_edit" />-->
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="106dp"
+                    android:layout_height="106dp"
+                    android:layout_marginTop="@dimen/margin_30"
+                    android:layout_marginBottom="@dimen/margin_20"
+                    android:src="@drawable/ic_profile_no_image"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_profileSetting" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="@dimen/margin_30"
+                    android:layout_height="@dimen/margin_30"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginBottom="100dp"
+                    android:background="@drawable/layout_shape"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/profile_image"
+                    app:layout_constraintTop_toBottomOf="@+id/profile_image">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageview_select_image"
+                        android:layout_width="@dimen/margin_20"
+                        android:layout_height="@dimen/margin_20"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_camera_icon" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textview_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_15"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textview_user_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_15"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_user_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageview_edit"
+                android:layout_width="@dimen/margin_20"
+                android:layout_height="@dimen/margin_20"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:fitsSystemWindows="true"
+                android:visibility="gone"
+                app:layout_collapseMode="pin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:descendantFocusability="blocksDescendants"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <!--        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewDone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_15"
+                            android:layout_marginEnd="@dimen/margin_15"
+                            android:background="@drawable/divider_button_share_line_border"
+                            android:paddingStart="@dimen/margin_10"
+                            android:paddingTop="2dp"
+                            android:paddingEnd="@dimen/margin_10"
+                            android:paddingBottom="2dp"
+                            android:text="@string/button_edit"
+                            android:textColor="@color/share_border"
+                            android:textSize="@dimen/header_size"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />-->
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        android:id="@+id/layout_view"
+        layout="@layout/layout_view_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

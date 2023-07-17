@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutController"
+    android:layout_width="match_parent"
+    android:layout_height="310dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="@dimen/margin_5"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginEnd="@dimen/margin_5"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewTestImage"
+                android:layout_width="@dimen/margin_60"
+                android:layout_height="@dimen/margin_60"
+                android:layout_marginTop="@dimen/margin_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_covid_19" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTestHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15"
+                android:gravity="center"
+                android:lineSpacingExtra="5.5sp"
+                android:singleLine="true"
+                android:text="@string/text_test_heading"
+                android:textColor="@color/test_heading"
+                android:textSize="@dimen/text_11"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewTestImage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTestContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lineSpacingExtra="4.5sp"
+                android:lines="4"
+                android:text="@string/text_test_heading"
+                android:textColor="@color/text_color"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTestHeading" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTestAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center"
+                android:lineSpacingExtra="8sp"
+                android:text="$ 148"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_13"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTestContent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonBookNow"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/margin_25"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:background="@drawable/button_theme_bg"
+                android:text="@string/text_order_now"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="9sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTestAmount" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

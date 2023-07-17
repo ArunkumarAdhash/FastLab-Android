@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imageviewBackArrow"
+        android:layout_width="@dimen/margin_25"
+        android:layout_height="@dimen/margin_25"
+        android:layout_margin="@dimen/margin_20"
+        android:background="@drawable/ic_back_arrow_black_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:gravity="center"
+        android:text="@string/text_my_test_order"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/header_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/recyclerviewTestList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_25"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:nestedScrollingEnabled="false"
+        app:layout_constraintBottom_toTopOf="@+id/mProgressBar"
+        app:layout_constraintTop_toBottomOf="@+id/imageviewBackArrow" />
+
+    <ProgressBar
+        android:id="@+id/mProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.lifehopehealthapp.widgets.LifeHopenTextView
+        android:id="@+id/textview_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_test_orders"
+        android:textColor="@color/black"
+        android:textSize="@dimen/margin_20"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!-- <com.lifehope.widgets.NoDataView
+         android:id="@+id/no_data_found_txt"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_gravity="center_vertical"
+         android:gravity="center_vertical"
+         app:layout_constraintTop_toBottomOf="@+id/imageview_back_arrow"
+         android:paddingTop="@dimen/margin_15"
+         app:ButtonText="@string/try_again"
+         app:srcCompat="@drawable/ic_no_internet" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

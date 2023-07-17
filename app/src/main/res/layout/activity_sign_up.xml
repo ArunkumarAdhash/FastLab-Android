@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg">
+
+    <com.lifehopehealthapp.widgets.LifeHopenTextView
+        android:id="@+id/text_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_30"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_30"
+        android:gravity="center"
+        android:text="@string/text_sign_up_heading"
+        android:textColor="@color/purple_500"
+        android:textSize="@dimen/text_15"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_privacy_policy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_heading">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutAppThemeImageView"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_height="350dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    android:background="@drawable/signup_img"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutAppThemeImageView">
+
+<!--
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/layout_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_40"
+                    android:layout_marginRight="@dimen/margin_40"
+                    android:longClickable="false"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:textColorHint="@color/purple_500"
+                    app:layout_constraintBottom_toTopOf="@+id/button_sign_up"
+                    app:layout_constraintHorizontal_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edittext_mobile_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/text_mobile_number"
+                        android:inputType="phone"
+                        android:longClickable="false"
+                        android:maxLength="13"
+                        android:phoneNumber="true"
+                        android:background="@color/white"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/info_color"
+                        android:textSize="@dimen/text_13" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+-->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_marginLeft="@dimen/margin_40"
+                    android:layout_marginRight="@dimen/margin_40"
+                    app:layout_constraintBottom_toTopOf="@+id/button_sign_up"
+                    app:layout_constraintHorizontal_weight="1"
+                    android:id="@+id/edittext_mobile_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/text_mobile_number"
+                    android:inputType="phone"
+                    android:textIsSelectable="false"
+                    android:longClickable="false"
+                    android:maxLength="14"
+                    android:digits="1234567890()-"
+                    android:phoneNumber="true"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/purple_500"
+                    android:textSize="@dimen/text_13" />
+               <!-- <com.vicmikhailau.maskededittext.MaskedEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_40"
+                    android:layout_marginRight="@dimen/margin_40"
+                    app:layout_constraintBottom_toTopOf="@+id/button_sign_up"
+                    app:layout_constraintHorizontal_weight="1"
+                    android:id="@+id/edittext_mobile_number"
+                    android:hint="@string/text_mobile_number"
+                    android:inputType="phone"
+                    android:textIsSelectable="false"
+                    android:longClickable="false"
+                    android:maxLength="14"
+                    android:phoneNumber="true"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/purple_500"
+                    android:textSize="@dimen/text_13"
+                     />-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_40"
+                    android:layout_marginRight="@dimen/margin_40"
+                    android:background="@drawable/divider_button_border"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_15"
+                    app:layout_constraintBottom_toTopOf="@+id/text_social_media_sing_up_lay" />
+
+
+                <LinearLayout
+                    android:id="@+id/text_social_media_sing_up_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_60"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginRight="@dimen/margin_60"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/margin_10"
+                    app:layout_constraintBottom_toTopOf="@+id/sm_lay">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dp"
+                        android:layout_weight="1"
+                        android:background="@color/grey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/text_social_media_sing_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="@dimen/margin_5"
+                        android:layout_marginRight="@dimen/margin_5"
+                        android:gravity="center_horizontal"
+                        android:text="@string/text_social_media"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_15" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dp"
+                        android:layout_weight="1"
+                        android:background="@color/grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sm_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_20"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image_facebook"
+                        android:layout_width="@dimen/margin_40"
+                        android:layout_height="@dimen/margin_40"
+                        app:srcCompat="@drawable/ic_facebook" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image_google"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/margin_10"
+                        app:srcCompat="@drawable/ic_google" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image_twitter"
+                        android:layout_width="@dimen/margin_40"
+                        android:layout_height="@dimen/margin_40"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_twitter" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_privacy_policy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:gravity="center"
+        android:text="@string/text_privacy_policy"
+        android:textSize="@dimen/text_12"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.rilixtech.CountryCodePicker
+        android:id="@+id/ccp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:ccp_defaultCode="91"
+        app:ccp_enableHint="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/buttonFacebookLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

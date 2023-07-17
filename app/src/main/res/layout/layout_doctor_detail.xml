@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDoctorName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:gravity="start"
+                tools:text="@string/text_order_summary"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/text_15"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewChat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/ratingBarPatient"
+                android:theme="@style/RatingBar"
+                style="@style/RatingBar"
+                android:layout_width="wrap_content"
+                android:numStars="5"
+                android:rating="5"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDoctorName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewRatingValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:text="(48)"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_11"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/ratingBarPatient"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDoctorName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDoctorDepartment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:gravity="start"
+                android:layout_marginEnd="@dimen/margin_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="@string/text_order_summary"
+                android:textColor="@color/text_light_color"
+                android:textSize="@dimen/text_13"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBarPatient" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDoctorLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:gravity="start"
+                android:layout_marginEnd="@dimen/margin_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="@string/text_order_summary"
+                android:textColor="@color/text_light_color"
+                android:textSize="@dimen/text_13"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDoctorDepartment" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewChat"
+                android:layout_width="@dimen/margin_30"
+                android:visibility="gone"
+                android:layout_height="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_10"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewPhone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_chat" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewPhone"
+                android:layout_width="@dimen/margin_30"
+                android:visibility="gone"
+                android:layout_height="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_10"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewVideoCall"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_phone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewVideoCall"
+                android:layout_width="@dimen/margin_30"
+                android:layout_height="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_video" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPatientsDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_40"
+                app:cardCornerRadius="@dimen/margin_10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDoctorLocation">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textviewPatient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/margin_40"
+                        android:paddingEnd="@dimen/margin_40"
+                        android:text="@string/text_patients"
+                        android:textColor="@color/text_light_color"
+                        android:textSize="@dimen/text_15"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textviewPatientCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_20"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:gravity="center"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/margin_20"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textviewPatient" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_40"
+                app:cardCornerRadius="@dimen/margin_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDoctorLocation">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDoctorExp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/margin_30"
+                        android:paddingEnd="@dimen/margin_30"
+                        android:text="@string/text_exp"
+                        android:textColor="@color/text_light_color"
+                        android:textSize="@dimen/text_15"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDoctorExpInYrs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_20"
+                        android:layout_marginStart="@dimen/margin_20"
+                        android:gravity="center"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/margin_20"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewDoctorExp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textviewAboutMeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30"
+                android:gravity="center"
+                android:paddingStart="@dimen/margin_40"
+                android:paddingEnd="@dimen/margin_40"
+                android:text="@string/text_doctor_about"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardPatientsDetail" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textviewAboutMe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:paddingStart="@dimen/margin_40"
+                android:paddingEnd="@dimen/margin_40"
+                tools:text="@string/demo_content"
+                android:textColor="@color/text_light_color"
+                android:textSize="@dimen/text_15"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textviewAboutMeLabel" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

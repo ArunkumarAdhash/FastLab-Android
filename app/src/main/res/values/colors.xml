@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#7a1281</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="green">#00B37A</color>
+    <color name="red">#E84949</color>
+    <color name="gold">#FFD700</color>
+    <color name="refunded">#FF5252</color>
+    <color name="localBackground">#827b92</color>
+    <color name="remoteBackground">#484258</color>
+    <color name="black">#FF000000</color>
+    <color name="txt_color">#636363</color>
+    <color name="box_color">#E5D5E6</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="splash_bg_color">#d2b9d7</color>
+    <color name="home_widgets_border">#bfc3c4</color>
+    <color name="indicator_selected">#7a1281</color>
+    <color name="indicator_un_selected">#dbcae2</color>
+    <color name="dashboard_item_color">#f4f3f8</color>
+    <color name="dashboard_item_border">#bfc3c4</color>
+    <color name="border">#f5f5f5</color>
+    <color name="doctor_available">#46bf77</color>
+    <color name="link_color">#55acee</color>
+    <color name="timer_color">#87509f</color>
+    <color name="info_color">#8089878b</color>
+    <color name="test_heading">#1b5a90</color>
+    <color name="text_color">#07080a</color>
+    <color name="toast_color">#7ac943</color>
+    <color name="schedule_time">#2196f3</color>
+    <color name="order_pending">#ffc300</color>
+    <color name="order_inprogress">#f27e0b</color>
+    <color name="order_reject">#ff5252</color>
+    <color name="text_light_color">#636363</color>
+    <color name="track_inactive">#89878b</color>
+    <color name="track_in_progress">#f27e0b</color>
+    <color name="track_active">#4caf50</color>
+    <color name="track_rejected">#E21B1B</color>
+    <color name="track_hyper_link">#2196f3</color>
+    <color name="track_contact_person">#7a1281</color>
+    <color name="track_grey">#89878b</color>
+    <color name="track_black">#07080a</color>
+    <color name="corona_bg">#f4f6fc</color>
+    <color name="blue_color">#3d3789</color>
+    <color name="layout_bg">#FDFEFE</color>
+    <color name="quick_health_progress_bg">#8b7dd8</color>
+    <color name="quick_health_progress_no_fill_bg">#edeeef</color>
+    <color name="comment_border">#707070</color>
+
+
+    <color name="share_border">#2f65d2</color>
+</resources>

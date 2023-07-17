@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "429634746470",
+    "project_id": "lifehope-health-313010",
+    "storage_bucket": "lifehope-health-313010.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429634746470:android:3bb3cef83dd5873d7315a7",
+        "android_client_info": {
+          "package_name": "com.lifehopehealthapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429634746470-6vus908miertc9fbstmngvq7gistsn66.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lifehopehealthapp",
+            "certificate_hash": "80eb2d146b6e2609cf871bd393eec223dfe50d4f"
+          }
+        },
+        {
+          "client_id": "429634746470-pfcrvnj5ego3uotdn42etv3lab3abjh0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lifehopehealthapp",
+            "certificate_hash": "468ffba5585fe2598dc0d5231f464a8efe44270b"
+          }
+        },
+        {
+          "client_id": "429634746470-sctntiqjorki42hemk30pmu28s8ou8en.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lifehopehealthapp",
+            "certificate_hash": "666cfbc23218fefde55a0adbe1c5f016cc90d288"
+          }
+        },
+        {
+          "client_id": "429634746470-kjnfhljcddeiaa4ntop5tasg10vf0nhe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZfk3jUTf9gEfAMIbgW5vFlpHkuIkDFJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429634746470-kjnfhljcddeiaa4ntop5tasg10vf0nhe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "429634746470-n7v30q0p5qr7iu7m65sikfqhdabvo0qh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lifehope.lifehope"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

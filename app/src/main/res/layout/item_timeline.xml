@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:orientation="horizontal">
+
+    <com.lifehopehealthapp.utils.timeLine.TimelineView
+        android:id="@+id/timeline"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:lineStyle="normal"
+        app:lineWidth="2dp"
+        app:markerSize="@dimen/margin_25" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="15dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="@dimen/margin_5"
+        app:contentPadding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_timeline_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/track_black"
+                android:textSize="14sp"
+                tools:text="Test Order Confirmed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_timeline_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/track_grey"
+                tools:text="Your test order has been confirmed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_timeline_labName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/text_color"
+                tools:text="Your test order has been confirmed" />
+
+            <LinearLayout
+                android:id="@+id/detail_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_timeline_contact_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_15"
+                    android:textColor="@color/track_contact_person"
+                    tools:text="Adam" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_timeline_arrivingTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:textColor="@color/text_color"
+                    tools:text="Adam" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_timeline_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/track_grey"
+                    tools:text="07 June at 11:00 AM" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_timeline_track_id_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/track_hyper_link"
+                    android:textColorLink="@color/track_hyper_link"
+                    tools:text="Fedex: FD659865865885488" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/shipping_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_shipping_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_30"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:background="@drawable/track_item_edit_text_bg"
+                        android:hint="@string/shipping_name"
+                        android:paddingLeft="@dimen/margin_10"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_shipping_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_30"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:background="@drawable/track_item_edit_text_bg"
+                        android:gravity="center_vertical"
+                        android:hint="@string/shipping_id"
+                        android:paddingLeft="@dimen/margin_10"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_submit"
+                    android:layout_width="@dimen/margin_40"
+                    android:layout_height="@dimen/margin_40"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:rotation="180"
+                    android:src="@drawable/ic_back_arrow_white_icon"
+                    app:backgroundTint="@color/purple_500"
+                    app:tint="@android:color/white"
+                    app:fabCustomSize="@dimen/margin_40" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

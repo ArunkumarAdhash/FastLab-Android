@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:hpb="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg">
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:background="@drawable/ic_back_arrow_black_icon"
+        android:id="@+id/imageview_close"
+        android:layout_width="@dimen/margin_25"
+        android:layout_height="@dimen/margin_25"
+        android:layout_margin="@dimen/margin_15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:text="@string/text_diagnosis"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/header_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/imageview_save"
+        app:layout_constraintStart_toEndOf="@+id/imageview_close"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageview_save"
+        android:layout_width="@dimen/margin_20"
+        android:layout_height="@dimen/margin_20"
+        android:layout_margin="@dimen/margin_20"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_bookmark" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textview_title">
+             <FrameLayout
+               android:id="@+id/frm_lay"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+              <!-- <nl.dionsegijn.konfetti.KonfettiView
+                   android:id="@+id/viewKonfetti"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent" />-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_test_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20"
+                android:elevation="4dp"
+                app:cardCornerRadius="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_user_name">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textview_test_details_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/border"
+                        android:lineSpacingExtra="6.5sp"
+                        android:paddingStart="@dimen/margin_15"
+                        android:paddingTop="@dimen/margin_5"
+                        android:paddingBottom="@dimen/margin_5"
+                        android:text="@string/text_primary_diagnosis"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_13"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textview_test_description"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_15"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        android:lineSpacingExtra="5.5sp"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_11"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_test_details_label"
+                        tools:layout_editor_absoluteY="58dp"
+                        tools:text="Based on the information you provided, you may have COVID - 19." />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textview_testRecommended"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_15"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:lineSpacingExtra="5sp"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_11"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="@dimen/margin_10"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_test_description"
+                        tools:text="Please book a test or consult with our speclists  " />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_testRecommended"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20"
+                android:elevation="4dp"
+                app:cardCornerRadius="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_test_details">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textview_user_name">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textview_test_recommended_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/border"
+                        android:lineSpacingExtra="6.5sp"
+                        android:paddingStart="@dimen/margin_15"
+                        android:paddingTop="@dimen/margin_5"
+                        android:paddingBottom="@dimen/margin_5"
+                        android:text="@string/text_Recommended"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_13"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewRecommendedTest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/textview_test_recommended_label" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_diagnosis_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:lineSpacingExtra="6.5sp"
+                android:paddingStart="@dimen/margin_10"
+                android:paddingTop="@dimen/margin_5"
+                android:paddingBottom="@dimen/margin_5"
+                android:text="@string/text_diagnosis_measure"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_13"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_testRecommended" />
+
+
+            <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+                android:id="@+id/customProgress"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_15"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                app:layout_constraintTop_toBottomOf="@+id/textview_diagnosis_label"
+                app:rcBackgroundColor="@color/quick_health_progress_no_fill_bg"
+                app:rcRadius="4dp"
+                app:rcReverse="false"
+                app:rcProgressColor="@color/purple_500"
+                app:rcAnimationEnable="true"
+                app:rcAnimationSpeedScale="20" />
+
+
+          <!--  <ProgressBar
+                android:id="@+id/customProgress"
+                style="@style/CustomProgressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                app:layout_constraintTop_toBottomOf="@+id/textview_diagnosis_label" />-->
+
+         <!--   <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_percentage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_13"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/customProgress" />-->
+
+
+            <com.robinhood.ticker.TickerView
+                android:id="@+id/textview_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_15"
+                android:textStyle="bold"
+                android:text="00"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/customProgress"
+                tools:ignore="MissingClass" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewSuccess"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_percentage"
+                app:srcCompat="@drawable/image_doctor" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_result_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:gravity="center"
+                android:lineSpacingExtra="6.5sp"
+                android:textColor="@color/blue_color"
+                android:textSize="@dimen/text_13"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewSuccess" />
+
+            <com.lifehopehealthapp.widgets.LifeHopeButton
+                android:id="@+id/button_share"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_40"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_60"
+                android:background="@drawable/divider_button_line_border"
+                android:gravity="center"
+                android:text="@string/button_share"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_book_test"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_result_message" />
+
+            <com.lifehopehealthapp.widgets.LifeHopeButton
+                android:id="@+id/button_book_test"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_40"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_60"
+                android:background="@drawable/divider_button_border"
+                android:gravity="center"
+                android:text="@string/text_book_test"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/button_share"
+                app:layout_constraintTop_toBottomOf="@+id/textview_result_message" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

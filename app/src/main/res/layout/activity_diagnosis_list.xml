@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imageview_back_arrow"
+        android:layout_width="@dimen/margin_25"
+        android:layout_height="@dimen/margin_25"
+        android:background="@drawable/ic_back_arrow_black_icon"
+        android:layout_margin="@dimen/margin_15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:gravity="center"
+        android:lineSpacingExtra="6.5sp"
+        android:id="@+id/textViewLabel"
+        android:text="@string/text_symptom_search"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/header_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageview_symptom"
+        android:layout_width="@dimen/margin_25"
+        android:layout_height="@dimen/margin_25"
+        android:layout_margin="@dimen/margin_15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_my_order" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_diagnosis"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_margin="@dimen/margin_15"
+        android:background="@drawable/ic_symptom_search"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/imageview_symptom">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_offer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:gravity="center"
+            android:lineSpacingExtra="6.5sp"
+            android:text="@string/text_offer"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_13"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_15"
+            android:lineSpacingExtra="6.5sp"
+            android:text="For Tests
+\nFree Home Collection ..."
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_13"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_offer" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_selfDiagnosis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_15"
+        android:gravity="center"
+        android:lineSpacingExtra="6.5sp"
+        android:text="@string/self_diagnosis"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_13"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_diagnosis" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewDiagnosis"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:layoutAnimation="@anim/layout_animation"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_selfDiagnosis" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

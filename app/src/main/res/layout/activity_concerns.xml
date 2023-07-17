@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewConcernsImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_50"
+        app:layout_constraintBottom_toTopOf="@+id/textViewLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:text="@string/text_enter_concerns"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_15"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/editTextConcerns" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextConcerns"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/divider_edittextbox"
+        android:ems="10"
+        android:maxLines="8"
+        android:gravity="start"
+        android:hint="@string/text_enter_concerns"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        android:maxLength="100"
+        android:padding="@dimen/margin_10"
+        android:textColor="@color/text_color"
+        android:textColorHint="@color/dashboard_item_border"
+        android:textSize="@dimen/text_13"
+        app:layout_constraintBottom_toTopOf="@+id/button_skip" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_skip"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/margin_40"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:background="@drawable/divider_button_line_border"
+        android:gravity="center"
+        android:text="@string/button_skip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_submit"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_submit"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/margin_40"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:background="@drawable/divider_button_border"
+        android:gravity="center"
+        android:text="@string/button_submit"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/button_skip" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.zerobranch.layout.SwipeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/swipe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        app:draggedItem="@id/cardViewItem"
+        app:rightItem="@id/right_view"
+        app:swipeDirection="left"
+        tools:ignore="MissingConstraints">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/right_view"
+            android:layout_width="@dimen/margin_30"
+            android:layout_height="@dimen/margin_30"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:src="@drawable/ic_delete" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_5"
+            android:layout_marginTop="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_5"
+            android:layout_marginBottom="@dimen/margin_5"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewVitalImage"
+                    android:layout_width="@dimen/margin_50"
+                    android:layout_height="@dimen/margin_50"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:padding="@dimen/margin_5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_vaccine_report_icon" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewVitalsName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_15"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:gravity="start"
+                    android:lineSpacingExtra="5sp"
+                    android:singleLine="true"
+                    android:text="@string/text_test_heading"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_12"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewDate"
+                    app:layout_constraintEnd_toStartOf="@+id/imageviewNextArrow"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewVitalImage"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_15"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:gravity="start"
+                    android:lineSpacingExtra="5sp"
+                    android:singleLine="true"
+                    android:text="@string/text_test_heading"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_12"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageviewNextArrow"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewVitalImage"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewVitalsName" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageviewNextArrow"
+                    android:layout_width="@dimen/margin_25"
+                    android:layout_height="@dimen/margin_25"
+                    android:layout_marginStart="@dimen/margin_25"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:gravity="center"
+                    android:lineSpacingExtra="5sp"
+                    android:text="@string/text_test_heading"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_11"
+                    android:textStyle="bold"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </com.zerobranch.layout.SwipeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

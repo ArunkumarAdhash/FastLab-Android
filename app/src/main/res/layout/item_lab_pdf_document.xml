@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_5">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewPDFView"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/image_pdf" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textviewPatientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10"
+        android:gravity="center"
+        android:lineSpacingExtra="4.5sp"
+        android:textColor="@color/text_color"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewPDFView"
+        tools:text="TharaniTharan" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textviewOrderID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5"
+        android:gravity="center"
+        android:lineSpacingExtra="4.5sp"
+        android:textColor="@color/purple_500"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textviewPatientName"
+        tools:text="Order ID: LH052152535" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textviewOrderDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_5"
+        android:gravity="center"
+        android:lineSpacingExtra="4.5sp"
+        android:textColor="@color/track_grey"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textviewOrderID"
+        tools:text="04/16/2020, 10:30AM" />
+</androidx.constraintlayout.widget.ConstraintLayout>

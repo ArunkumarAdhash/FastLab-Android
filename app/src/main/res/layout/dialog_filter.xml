@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_30"
+    android:background="@color/layout_bg">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewFilterLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_5"
+        android:layout_marginTop="@dimen/margin_10"
+        android:gravity="center"
+        android:text="@string/text_select_dates"
+        android:textColor="@color/purple_500"
+        android:textSize="@dimen/text_15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/layoutStartDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_30"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFilterLabel">
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:textColorHint="@color/purple_500"
+            app:layout_constraintTop_toBottomOf="@+id/view_spinner_bg">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextStartDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:editable="false"
+                android:focusable="false"
+                android:hint="@string/text_start_date"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="@dimen/text_15" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewStartDateCalender"
+            android:layout_width="@dimen/margin_25"
+            android:layout_height="@dimen/margin_25"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/margin_25"
+            android:layout_marginEnd="@dimen/margin_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/layout_mobile"
+            app:layout_constraintTop_toBottomOf="@+id/layout_email"
+            app:srcCompat="@drawable/ic_calender" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/layoutEndDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_30"
+        app:layout_constraintTop_toBottomOf="@+id/layoutStartDate">
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:textColorHint="@color/purple_500"
+            app:layout_constraintTop_toBottomOf="@+id/view_spinner_bg">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:editable="false"
+                android:focusable="false"
+                android:hint="@string/text_end_date"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="@dimen/text_15" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewEndDateCalender"
+            android:layout_width="@dimen/margin_25"
+            android:layout_height="@dimen/margin_25"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/margin_25"
+            android:layout_marginEnd="@dimen/margin_5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/layout_mobile"
+            app:layout_constraintTop_toBottomOf="@+id/layout_email"
+            app:srcCompat="@drawable/ic_calender" />
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_30"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:background="@drawable/divider_button_line_border"
+        android:gravity="center"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonFilter"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutEndDate" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonFilter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:background="@drawable/button_theme_bg"
+        android:gravity="center"
+        android:text="@string/button_apply_filter"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/buttonCancel" />
+</androidx.constraintlayout.widget.ConstraintLayout>

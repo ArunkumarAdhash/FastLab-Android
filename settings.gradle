@@ -1,0 +1,9 @@
+include ':MPChartLib'
+include ':autodetectotpandroid'
+include ':app'
+rootProject.name = "LifeHope"
+include ':swipelayout'
+include ':customrecyclerview'
+include ':Xrecyclerview'
+include ':ImagePickerUpdate'
+include ':GlideToVector'

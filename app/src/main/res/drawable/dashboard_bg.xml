@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- my firt item with 4 corners radius(8dp)
+     -->
+    <item>
+        <shape>
+            <corners
+                android:bottomLeftRadius="15dp"
+                android:bottomRightRadius="15dp"/>
+
+            <gradient
+                android:type="linear"
+                android:angle="90"
+                android:startColor="#d13edb"
+                android:endColor="#7a1281" />
+
+
+        </shape>
+    </item>
+  <!--  <item
+        android:drawable="@drawable/logo_white_bg"
+        android:gravity="top"/>-->
+</layer-list>

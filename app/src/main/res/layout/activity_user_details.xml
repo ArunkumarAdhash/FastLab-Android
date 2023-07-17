@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_bg">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imageButtonClose"
+        android:layout_width="@dimen/margin_20"
+        android:layout_height="@dimen/margin_20"
+        android:layout_margin="@dimen/margin_20"
+        android:background="@drawable/ic_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonClose">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textviewTakePhotoLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_30"
+                android:layout_marginTop="@dimen/margin_20"
+                android:text="@string/text_take_picture"
+                android:textColor="@color/purple_500"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_TakePhoto"
+                android:layout_width="230dp"
+                android:layout_height="230dp"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:background="@drawable/image_divider_bg"
+                app:layout_constraintBottom_toTopOf="@+id/layout_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textviewTakePhotoLabel">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/margin_50"
+                    android:layout_height="@dimen/margin_50"
+                    android:src="@drawable/ic_camera_icon"
+                    android:tint="@color/purple_500"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardViewUserImage"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/layout_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textviewTakePhotoLabel">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_Profile_Image"
+                    android:layout_width="230dp"
+                    android:layout_height="230dp"
+                    android:layout_marginBottom="@dimen/margin_20"
+                    android:src="@drawable/ic_profile_no_image"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutEditImage"
+                    android:layout_width="@dimen/margin_60"
+                    android:layout_height="@dimen/margin_60"
+                    android:layout_marginStart="@dimen/margin_10"
+                    android:layout_marginBottom="@dimen/margin_60"
+                    android:background="@drawable/layout_shape"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/user_Profile_Image"
+                    app:layout_constraintTop_toBottomOf="@+id/user_Profile_Image">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageview_select_image"
+                        android:layout_width="@dimen/margin_20"
+                        android:layout_height="@dimen/margin_20"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_camera_icon" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="230dp"
+                android:layout_height="230dp"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:elevation="10dp"
+                android:visibility="gone"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/layout_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textviewTakePhotoLabel">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewUserPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="@dimen/margin_50"
+                    android:layout_height="@dimen/margin_50"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginEnd="@dimen/margin_5"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:background="@drawable/layout_shape">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/margin_20"
+                        android:layout_height="@dimen/margin_20"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_camera_icon" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_40"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_40"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:textColorHint="@color/purple_500"
+                app:layout_constraintBottom_toTopOf="@+id/layout_last_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edittext_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:digits="QWERTYUIOPASDFGHJKLZXCVBNMqwertzuiopasdfghjklyxcvbnm"
+                    android:hint="@string/text_firstname"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords|textNoSuggestions"
+                    android:maxLength="60"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_15" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_40"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_40"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:textColorHint="@color/purple_500"
+                app:layout_constraintBottom_toTopOf="@+id/textview_gender_label">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edittext_lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:digits="QWERTYUIOPASDFGHJKLZXCVBNMqwertzuiopasdfghjklyxcvbnm"
+                    android:hint="@string/text_lastname"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords|textNoSuggestions"
+                    android:maxLength="60"
+                    android:singleLine="true"
+                    android:textSize="@dimen/text_15" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_gender_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_55"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_40"
+                android:text="@string/text_gender"
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/text_13"
+                app:layout_constraintBottom_toTopOf="@+id/spinner_gender"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner_gender"
+                style="@style/SpinnerTheme"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_40"
+                android:layout_marginStart="@dimen/margin_40"
+                android:layout_marginEnd="@dimen/margin_40"
+                android:textSize="@dimen/text_11"
+                app:layout_constraintBottom_toTopOf="@+id/view_spinner_bg" />
+
+            <View
+                android:id="@+id/view_spinner_bg"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/margin_45"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_40"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:background="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/layout_age"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_40"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_40"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:textColorHint="@color/purple_500"
+                app:layout_constraintBottom_toTopOf="@+id/checkBoxProfile">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edittext_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="@string/text_age"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textSize="@dimen/text_15" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkBoxProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_40"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginEnd="@dimen/margin_40"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:paddingStart="@dimen/margin_10"
+                android:text="@string/text_profile_info"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_15"
+                app:layout_constraintBottom_toTopOf="@+id/buttonNext"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonNext"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_40"
+                android:layout_margin="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_15"
+                android:background="@drawable/button_disable_bg"
+                android:text="@string/button_next"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

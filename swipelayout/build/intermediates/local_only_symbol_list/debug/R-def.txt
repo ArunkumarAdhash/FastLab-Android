@@ -1,0 +1,15 @@
+R_DEF: Internal format may change without notice
+local
+attr? autoMovingSensitivity
+attr? draggedItem
+attr? isContinuousSwipe
+attr? isEnabledSwipe
+attr? isFreeDragAfterOpen
+attr? isFreeHorizontalDrag
+attr? isTogether
+attr? leftDragViewPadding
+attr? leftItem
+attr? rightDragViewPadding
+attr? rightItem
+attr? swipeDirection
+styleable SwipeLayout swipeDirection isEnabledSwipe isFreeDragAfterOpen isFreeHorizontalDrag isContinuousSwipe isTogether rightItem leftItem draggedItem autoMovingSensitivity rightDragViewPadding leftDragViewPadding

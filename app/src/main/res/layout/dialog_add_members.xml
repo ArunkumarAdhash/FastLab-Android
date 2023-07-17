@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_20"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textview_dialog_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_30"
+        android:layout_marginEnd="@dimen/margin_10"
+        android:gravity="center"
+        android:text="@string/text_add_members_label"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_15"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        app:layout_constraintTop_toBottomOf="@+id/textview_dialog_heading">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/purple_500"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:digits="aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyY zZ0123456789"
+                android:hint="@string/text_name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:maxLength="30"
+                android:singleLine="true"
+                android:textSize="@dimen/text_15" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/purple_500"
+            app:layout_constraintTop_toBottomOf="@+id/layout_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="@string/text_age"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="3"
+                android:singleLine="true"
+                android:textSize="@dimen/text_15" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textview_gender_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_15"
+            android:layout_marginTop="@dimen/margin_10"
+            android:text="@string/text_gender"
+            android:textColor="@color/purple_500"
+            android:textSize="@dimen/text_13"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_age" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_gender"
+            style="@style/SpinnerTheme"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_30"
+            android:textSize="@dimen/text_11"
+            app:layout_constraintTop_toBottomOf="@+id/textview_gender_label" />
+
+        <View
+            android:id="@+id/view_spinner_bg"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/spinner_gender" />
+
+        <com.lifehopehealthapp.widgets.LifeHopeButton
+            android:id="@+id/button_cancel"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_40"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_20"
+            android:background="@drawable/divider_button_line_border"
+            android:gravity="center"
+            android:text="@string/button_cancel"
+            app:layout_constraintEnd_toStartOf="@+id/button_proceed"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_spinner_bg" />
+
+        <com.lifehopehealthapp.widgets.LifeHopeButton
+            android:id="@+id/button_proceed"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_40"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:background="@drawable/divider_button_border"
+            android:gravity="center"
+            android:text="@string/button_add"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/button_cancel"
+            app:layout_constraintTop_toBottomOf="@+id/view_spinner_bg" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
